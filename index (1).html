@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DataPath Academy | Learn SQL, Power BI & Python</title>
+<meta name="description" content="Learn SQL, Power BI, Python and Data Analytics through practical projects, interview preparation and beginner-friendly lessons.">
+<style>
+:root{--bg:#f7f9fc;--card:#fff;--text:#14213d;--muted:#5f6b7a;--primary:#2563eb;--primary2:#7c3aed;--dark:#0f172a;--border:#e5e7eb;--green:#0f9d72}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.navbar{height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:21px;letter-spacing:-.5px}
+.logo span{color:var(--primary)}
+.navlinks{display:flex;gap:24px;align-items:center;font-size:14px;font-weight:650}
+.navlinks a:hover{color:var(--primary)}
+.menu{display:none;background:none;border:0;font-size:26px}
+.btn{display:inline-block;padding:12px 18px;border-radius:10px;font-weight:750;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--primary);color:white}
+.btn-primary:hover{background:#1d4ed8}
+.btn-outline{border-color:#cbd5e1;background:white}
+.hero{padding:82px 0 70px;background:radial-gradient(circle at 85% 20%,#ddd6fe 0,transparent 30%),linear-gradient(135deg,#eef5ff,#fff)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}
+.badge{display:inline-block;padding:7px 12px;background:#e0ecff;color:#1d4ed8;border-radius:999px;font-size:13px;font-weight:800;margin-bottom:18px}
+h1{font-size:clamp(40px,6vw,66px);line-height:1.05;letter-spacing:-2.5px;margin-bottom:20px}
+h1 span{color:var(--primary)}
+.hero p{font-size:18px;color:var(--muted);max-width:650px;margin-bottom:28px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card{background:#0f172a;color:#fff;border-radius:22px;padding:25px;box-shadow:0 20px 50px rgba(15,23,42,.18)}
+.hero-card h3{margin-bottom:18px}
+.codebox{background:#111827;border:1px solid #263244;border-radius:12px;padding:18px;font-family:ui-monospace,SFMono-Regular,monospace;font-size:13px;color:#dbeafe}
+.codebox .blue{color:#93c5fd}.codebox .green{color:#86efac}.codebox .purple{color:#c4b5fd}
+section{padding:72px 0}
+.section-head{text-align:center;max-width:720px;margin:0 auto 38px}
+.section-head h2{font-size:34px;letter-spacing:-1px;margin-bottom:9px}
+.section-head p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:25px;box-shadow:0 8px 25px rgba(15,23,42,.04)}
+.card:hover{transform:translateY(-3px);transition:.2s;box-shadow:0 14px 32px rgba(15,23,42,.08)}
+.icon{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-weight:900;font-size:19px;background:#eef2ff;color:#3730a3;margin-bottom:17px}
+.card h3{margin-bottom:8px}.card p{color:var(--muted);font-size:14px}
+.card a{display:inline-block;margin-top:16px;color:var(--primary);font-weight:750;font-size:14px}
+.course-card{overflow:hidden;padding:0}
+.course-top{padding:25px;color:white}
+.sql{background:linear-gradient(135deg,#2563eb,#4338ca)}
+.power{background:linear-gradient(135deg,#d97706,#f59e0b)}
+.python{background:linear-gradient(135deg,#059669,#0f766e)}
+.ds{background:linear-gradient(135deg,#7c3aed,#4f46e5)}
+.course-body{padding:22px}
+.course-body ul{list-style:none;color:var(--muted);font-size:14px}
+.course-body li{padding:6px 0}.course-body li:before{content:"✓";color:var(--green);font-weight:900;margin-right:8px}
+.project{display:grid;grid-template-columns:1fr 1fr;gap:0;background:white;border:1px solid var(--border);border-radius:18px;overflow:hidden}
+.project-art{min-height:280px;background:linear-gradient(135deg,#172554,#312e81);color:white;padding:30px;display:flex;flex-direction:column;justify-content:center}
+.project-art .bars{display:flex;align-items:end;gap:10px;height:100px;margin-top:20px}.bar{width:28px;background:#93c5fd;border-radius:5px 5px 0 0}.bar:nth-child(1){height:45%}.bar:nth-child(2){height:75%}.bar:nth-child(3){height:58%}.bar:nth-child(4){height:92%}.bar:nth-child(5){height:68%}
+.project-content{padding:34px}.project-content p{color:var(--muted);margin:10px 0 18px}
+.steps{counter-reset:item;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step{position:relative;padding:22px;background:#fff;border:1px solid var(--border);border-radius:15px}.step strong{display:block;margin-bottom:8px}.step:before{counter-increment:item;content:counter(item);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#dbeafe;color:#1d4ed8;font-weight:900;margin-bottom:14px}
+.resources{background:#0f172a;color:white}.resources .section-head p{color:#cbd5e1}.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.resource{padding:22px;border:1px solid #263244;border-radius:15px;background:#111c30}.resource p{color:#cbd5e1;font-size:14px;margin-top:7px}
+.cta{background:linear-gradient(135deg,#1d4ed8,#6d28d9);color:white;text-align:center;padding:65px 20px;border-radius:24px;margin:72px auto;width:min(1080px,92%)}
+.cta p{max-width:650px;margin:10px auto 24px;color:#e0e7ff}
+footer{background:#0b1120;color:#cbd5e1;padding:35px 0}.footer-grid{display:flex;justify-content:space-between;gap:20px}.footer-grid small{color:#94a3b8}
+form{display:grid;gap:12px;max-width:650px;margin:auto}.input{padding:13px 14px;border:1px solid var(--border);border-radius:10px;font:inherit;background:#fff}.form-msg{text-align:center;color:var(--green);font-weight:700;margin-top:12px;display:none}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:800px){.navlinks{display:none}.menu{display:block}.hero-grid,.project{grid-template-columns:1fr}.grid,.resource-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.hero{padding-top:55px}}
+@media(max-width:520px){.grid,.resource-grid,.steps{grid-template-columns:1fr}h1{font-size:42px}.navbar{height:62px}.navlinks.mobile{display:flex;position:absolute;top:62px;left:0;right:0;background:white;flex-direction:column;padding:18px;border-bottom:1px solid var(--border)}}
+</style>
+</head>
+<body>
+<nav>
+<div class="container navbar">
+<a class="logo" href="#home">Data<span>Path</span> Academy</a>
+<button class="menu" onclick="toggleMenu()" aria-label="Menu">☰</button>
+<div class="navlinks" id="navlinks">
+<a href="#courses">Courses</a><a href="#projects">Projects</a><a href="#resources">Free Resources</a><a href="#contact">Contact</a>
+<a class="btn btn-primary" href="#courses">Start Learning</a>
+</div>
+</div>
+</nav>
+
+<header class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<div class="badge">SQL • POWER BI • PYTHON • DATA SCIENCE • PROJECTS</div>
+<h1>Become a <span>Job-Ready</span> Data Professional.</h1>
+<p>Learn Data Analytics & Data Science in simple Hindi/Hinglish through practical lessons, real datasets, projects, machine learning and interview preparation.</p>
+<div class="actions"><a class="btn btn-primary" href="#courses">Explore Courses</a><a class="btn btn-outline" href="#resources">Free Resources</a></div>
+</div>
+<div class="hero-card">
+<h3>What you'll build</h3>
+<div class="codebox">
+<span class="purple">Data Analytics & Data Science</span><br><br>
+<span class="blue">SQL</span> → Clean & query data<br>
+<span class="green">Python</span> → Analyse & visualize<br>
+<span class="blue">Power BI</span> → Build dashboard<br>
+<span class="purple">Data Science</span> → ML & predictive insights<br>
+<span class="purple">Insights</span> → Explain the business
+</div>
+</div>
+</div>
+</header>
+
+<section id="courses">
+<div class="container">
+<div class="section-head"><h2>Learn the skills that matter</h2><p>Start from the basics and move toward real-world Data Analyst projects.</p></div>
+<div class="grid">
+<div class="card"><div class="icon">SQL</div><h3>SQL for Data Analysts</h3><p>Queries, filtering, aggregation, joins, subqueries, CTEs, window functions and interview practice.</p><a href="#contact">View learning path →</a></div>
+<div class="card"><div class="icon">BI</div><h3>Power BI</h3><p>Data import, modelling, relationships, DAX, visuals, dashboards and portfolio-ready projects.</p><a href="#contact">View learning path →</a></div>
+<div class="card"><div class="icon">PY</div><h3>Python for Data Analysis</h3><p>Python basics, Pandas, NumPy, data cleaning, analysis and visualisation using practical datasets.</p><a href="#contact">View learning path →</a></div><div class="card"><div class="icon">DS</div><h3>Data Science</h3><p>Statistics, exploratory data analysis, feature engineering, machine learning, model evaluation and end-to-end Data Science projects.</p><a href="#contact">View learning path →</a></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-head"><h2>How you'll learn</h2><p>A simple path from beginner to portfolio-ready.</p></div>
+<div class="steps">
+<div class="step"><strong>Learn</strong><span>Short, focused lessons with simple explanations.</span></div>
+<div class="step"><strong>Practice</strong><span>Exercises, queries and datasets after every topic.</span></div>
+<div class="step"><strong>Build</strong><span>Real-world projects using SQL, Python, Power BI and Data Science.</span></div>
+<div class="step"><strong>Prepare</strong><span>Resume, portfolio and Data Analyst interview practice.</span></div>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+<div class="section-head"><h2>Featured project</h2><p>Learn by building something you can discuss in an interview.</p></div>
+<div class="project">
+<div class="project-art"><h2>Indian Retail Sales Analytics</h2><p>From raw data to business insights.</p><div class="bars"><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div></div>
+<div class="project-content"><h3>Complete Data Analyst Project</h3><p>Work through the complete analytics workflow and create a portfolio-ready dashboard.</p><ul><li>✓ Clean and understand the dataset</li><li>✓ Write SQL analysis queries</li><li>✓ Analyse data with Python/Pandas</li><li>✓ Build and evaluate a machine learning model</li><li>✓ Build an interactive Power BI dashboard</li><li>✓ Present business insights</li></ul><a class="btn btn-primary" href="#resources">Get project resources</a></div>
+</div>
+</div>
+</section>
+
+<section id="data-science-roadmap">
+<div class="container">
+<div class="section-head"><h2>Data Science Roadmap</h2><p>Follow a practical path from Python fundamentals to machine learning projects.</p></div>
+<div class="steps">
+<div class="step"><strong>1. Python & NumPy</strong><span>Python basics, NumPy, Pandas and data manipulation.</span></div>
+<div class="step"><strong>2. Statistics & EDA</strong><span>Descriptive statistics, probability, distributions and exploratory analysis.</span></div>
+<div class="step"><strong>3. Machine Learning</strong><span>Regression, classification, clustering, feature engineering and model evaluation.</span></div>
+<div class="step"><strong>4. Projects</strong><span>Build portfolio projects and explain business insights and model results.</span></div>
+</div>
+</div>
+</section>
+
+<section class="resources" id="resources">
+<div class="container">
+<div class="section-head"><h2>Free learning resources</h2><p>Use these resources while following the lessons.</p></div>
+<div class="resource-grid">
+<div class="resource"><h3>📄 SQL Cheat Sheet</h3><p>Common commands and patterns for daily practice.</p></div>
+<div class="resource"><h3>📊 Power BI Dataset</h3><p>Practice importing, modelling and building dashboards.</p></div>
+<div class="resource"><h3>🐍 Python Practice</h3><p>Beginner-friendly Pandas exercises and analysis tasks.</p></div><div class="resource"><h3>🤖 Data Science Roadmap</h3><p>Statistics, EDA, machine learning, model evaluation and portfolio projects.</p></div>
+<div class="resource"><h3>💼 Interview Questions</h3><p>Practice SQL, Power BI and Python interview questions.</p></div>
+<div class="resource"><h3>📁 Project Templates</h3><p>Use structured project documentation for your portfolio.</p></div>
+<div class="resource"><h3>📝 Resume Checklist</h3><p>Organise your skills and projects for Data Analyst roles.</p></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-head"><h2>Start learning for free</h2><p>Watch the free lessons first. Paid courses and live batches can be added later.</p></div>
+<div style="text-align:center"><a class="btn btn-primary" href="https://www.youtube.com/" target="_blank" rel="noopener">Visit YouTube Channel</a></div>
+</div>
+</section>
+
+<div class="cta">
+<h2>Ready to start your Data Analyst & Data Science journey?</h2>
+<p>Build practical skills, complete projects and prepare for real interviews — one step at a time.</p>
+<a class="btn" style="background:white;color:#1d4ed8" href="#contact">Join the learning list</a>
+</div>
+
+<section id="contact">
+<div class="container">
+<div class="section-head"><h2>Stay connected</h2><p>Collect interested learners before launching your first course.</p></div>
+<form onsubmit="submitForm(event)">
+<input class="input" id="name" required placeholder="Your name">
+<input class="input" id="email" type="email" required placeholder="Email address">
+<select class="input" id="interest"><option>SQL</option><option>Power BI</option><option>Python</option><option>Data Science</option><option>Complete Data Analyst</option></select>
+<button class="btn btn-primary" type="submit">Join Free Learning List</button>
+<div class="form-msg" id="msg">Thanks! This demo form is working locally. Connect it to a form service before publishing.</div>
+</form>
+</div>
+</section>
+
+<footer>
+<div class="container footer-grid">
+<div><strong>DataPath Academy</strong><br><small>Learn. Practice. Build. Get Job-Ready in Data & AI.</small></div>
+<div><small>© 2026 DataPath Academy • Demo website</small></div>
+</div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('navlinks').classList.toggle('mobile')}
+function submitForm(e){e.preventDefault();document.getElementById('msg').style.display='block';e.target.reset()}
+</script>
+</body>
+</html>
